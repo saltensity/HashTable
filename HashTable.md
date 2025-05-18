@@ -24,8 +24,9 @@ and the following methods:
         
       $`hash(s) = (s[0] + s[1].p + s[2].p^2 + ... + s[n-1].p^{n-1})\ mod\ m = (\sum_{i=0}^{n-1} s[i].p^i)\ mod\ m`$  
       where
-      - asdas
-      - adasd
+      - `s[0]` indicates the integer representation of a character at index 0 of the string (remember to convert it accordingly)
+      - `p` - a small prime number (we will use 31 for this implementation)
+      - `m` - a large prime number (we will use $`10^9+9`$ for this implementation) 
      
 - `add`
     - adds an item to the hash table
