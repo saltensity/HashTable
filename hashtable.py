@@ -13,7 +13,7 @@ class HashTable:
 
         Note: 
         - The largest value to be returned will be less than size.   
-        Remember to compress the return value to fit the table size
+        Remember to compress the return value to fit the table size (tip: You can use the mod operator once more)
        
         Parameters
         ---------
@@ -25,11 +25,7 @@ class HashTable:
     def add(self, key, value):
         """
         """
-        index = self._hash(key)
-        if self.values[index] is None:
-            self.values[index] = value
-        else:
-            print("Unable to add. Destination not empty!")
+        pass
 
     def get(self, key):
         """
