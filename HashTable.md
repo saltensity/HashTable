@@ -9,7 +9,7 @@ A Hash Table is implemented with a fixed-size array.
 
 ### Task
 
-With reference to the **algorithm** given in the [notes](https://docs.google.com/document/d/1zLx_t1aAnpJy3FHaX5LNb62bGLaKi7Yi3UK5Dst7GhU/edit#heading=h.aaxz93aw2q7g), you are required to Implement a **Hash Table** class (in the **hashtable.py file**)  
+With reference to the **algorithm** given in the [notes](https://docs.google.com/document/d/18-ROQl3yrCsoCzIDRKCvKqx82IprpE5UoxTVyPfw8bo/edit?tab=t.0#heading=h.n8aq0nk6ho4p), you are required to Implement a **Hash Table** class (in the **hashtable.py file**)  
 
 with the attributes:  
 - `size` - size of the hash table
@@ -25,10 +25,12 @@ and the following methods:
       $`hash(s) = (s[0] + s[1].p + s[2].p^2 + ... + s[n-1].p^{n-1})\ mod\ m = (\sum_{i=0}^{n-1} s[i].p^i)\ mod\ m`$  
       where
       - `s[0]` indicates the integer representation of a character at index 0 of the string (remember to convert it accordingly)
-      - `p` - a small prime number (we will use 31 for this implementation)
+      - `p` - a small prime number (if the input is composed of only lowercase letters of the English alphabet,  
+        $p = 31$  is a good choice. If the input may contain both uppercase and lowercase letters, then  
+        $p = 53$  is a possible choice.)
       - `m` - a large prime number (we will use $`10^9+9`$ for this implementation)
 
-    - Here is an example of calculating the hash of a string  
+    - You can use the following sample in `pseudocode`, of calculating the hash of a string 
     $s$ , which contains only lowercase letters. We convert each character of  
     $s$  to an integer. Here we use the conversion  
     $a \rightarrow 1$ ,  
@@ -56,7 +58,7 @@ and the following methods:
         pPow ← 1
 
         FOR i ← 1 TO LENGTH(S)
-            CharValue ← ASC(S[i]) - ASC('a') + 1
+            CharValue ← ASCII(S[i]) - ASCII('a') + 1
             HashValue ← (HashValue + CharValue * pPow) MOD m
             pPow ← (pPow * p) MOD m
         NEXT i

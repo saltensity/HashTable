@@ -12,10 +12,8 @@ class HashTable:
         Further reading: https://cp-algorithms.com/string/string-hashing.html
 
         Note: 
-        - p: int
-          A parameter used in the rolling polynomial algorithm
-        - size: int
-          The largest value to be returned will be less than size
+        - The largest value to be returned will be less than size.   
+        Remember to compress the return value to fit the table size
        
         Parameters
         ---------
