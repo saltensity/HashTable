@@ -1,6 +1,3 @@
-Reference: [Hash Table](https://docs.google.com/document/d/1zLx_t1aAnpJy3FHaX5LNb62bGLaKi7Yi3UK5Dst7GhU/edit#heading=h.aaxz93aw2q7g)
-
-
 ## Hash Table Practice
 
 A Hash Table is implemented with a fixed-size array.
