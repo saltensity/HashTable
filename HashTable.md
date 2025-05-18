@@ -66,7 +66,8 @@ and the following methods:
         RETURN HashValue
     END FUNCTION
     ```
-     
+    `NOTE:` The largest value to be returned will be less than size.   
+    Remember to compress the return value to fit the table size 
 - `add`
     - adds an item to the hash table
     - displays the string
