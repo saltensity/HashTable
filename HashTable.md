@@ -26,7 +26,44 @@ and the following methods:
       where
       - `s[0]` indicates the integer representation of a character at index 0 of the string (remember to convert it accordingly)
       - `p` - a small prime number (we will use 31 for this implementation)
-      - `m` - a large prime number (we will use $`10^9+9`$ for this implementation) 
+      - `m` - a large prime number (we will use $`10^9+9`$ for this implementation)
+
+    - Here is an example of calculating the hash of a string  
+    $s$ , which contains only lowercase letters. We convert each character of  
+    $s$  to an integer. Here we use the conversion  
+    $a \rightarrow 1$ ,  
+    $b \rightarrow 2$ ,  
+    $\dots$ ,  
+    $z \rightarrow 26$ . Converting  
+    $a \rightarrow 0$  is not a good idea, because then the hashes of the strings  
+    $a$ ,  
+    $aa$ ,  
+    $aaa$ ,  
+    $\dots$  all evaluate to  
+    $0$ .
+    ```code
+    FUNCTION ComputeHash(S : STRING) RETURNS INTEGER
+        DECLARE p : INTEGER
+        DECLARE m : INTEGER
+        DECLARE HashValue : INTEGER
+        DECLARE pPow : INTEGER
+        DECLARE i : INTEGER
+        DECLARE CharValue : INTEGER
+
+        p ← 31
+        m ← 1000000009
+        HashValue ← 0
+        pPow ← 1
+
+        FOR i ← 1 TO LENGTH(S)
+            CharValue ← ASC(S[i]) - ASC('a') + 1
+            HashValue ← (HashValue + CharValue * pPow) MOD m
+            pPow ← (pPow * p) MOD m
+        NEXT i
+
+        RETURN HashValue
+    END FUNCTION
+    ```
      
 - `add`
     - adds an item to the hash table
