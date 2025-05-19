@@ -6,7 +6,7 @@ class HashTable:
         """returns a formatted string containing the values in the hash table"""
         return f"HashTable {self.values}"
 
-    def _hash(self, key):
+    def _hash(self, key: str) -> int:
         """
         Return the hashed value using the rolling polynomial algorithm.
         Further reading: https://cp-algorithms.com/string/string-hashing.html
@@ -22,22 +22,22 @@ class HashTable:
         """
         pass
 
-    def add(self, key, value):
+    def add(self, key: str, value: dict) -> str:
         """
         """
         pass
 
-    def get(self, key):
+    def get(self, key: str):
         """
         """
         pass
 
-    def update(self, key, value):
+    def update(self, key: str, value: dict) -> str:
         """
         """
         pass
         
-    def remove(self, key):
+    def remove(self, key: str) -> str:
         """
         """
         pass

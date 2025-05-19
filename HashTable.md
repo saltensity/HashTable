@@ -4,8 +4,6 @@ A Hash Table is implemented with a fixed-size array.
 
 **Reminder:** A hash table **does NOT do a linear search** to locate the item! If you are looking to implement a linear search algorithm within the hash table, **think twice**!
 
-### Task
-
 With reference to the **algorithm** given in the [notes](https://docs.google.com/document/d/18-ROQl3yrCsoCzIDRKCvKqx82IprpE5UoxTVyPfw8bo/edit?tab=t.0#heading=h.n8aq0nk6ho4p), you are required to Implement a **Hash Table** class (in the **hashtable.py file**)  
 
 with the attributes:  
@@ -16,7 +14,7 @@ and the following methods:
 - `repr` - returns a formatted string containing the values in the hash table
 - `_hash`
     - takes in a `string` argument `key`
-    - returns a hashed `integer` value denoting the location (to be used by the other methods for insertion/update/retrieval/deletion) using the rolling polynomial algorithm below:  
+    - returns a hashed `integer` value denoting the `location` (to be used by the other methods for insertion/update/retrieval/deletion) using a hash function. A sample hash function, using the rolling polynomial algorithm is shown below:  
       (Further reading: https://cp-algorithms.com/string/string-hashing.html)  
         
       $`hash(key) = (key[0] + key[1].p + key[2].p^2 + ... + key[n-1].p^{n-1})\ mod\ m = (\sum_{i=0}^{n-1} key[i].p^i)\ mod\ m`$  
@@ -63,8 +61,7 @@ and the following methods:
         RETURN hashValue MOD SIZE_OF_HASHTABLE
     END FUNCTION
     ```
-    `NOTE:` The largest value to be returned will be less than the size of hashtable.   
-    Remember to compress the return value to fit the table size 
+    `NOTE:` The largest value to be returned will be less than the size of hash table, hence the need to mod the hashValue with the size of the hash table. 
 - `add`
     - adds an item to the hash table
     - displays the following strings:
@@ -80,8 +77,14 @@ and the following methods:
         - `Data successfully updated` otherwise
 - `remove`
     - removes the item at the destination
-    - returns the following strings:
+    - displays the following strings:
         - `Unable to remove. Destination is empty!` if there is no item at the destination or
         - `Data successfully removed` otherwise
+
+## Task 1.1
+Implement the `_hash` method such that:
+- it accepts a string `key` as parameter
+- uses the hashing algorithm mentioned above
+- and returns a integer value denoting the location of an item in the hash table
 
 **NOTE: Remember to include the docstrings for the above methods**
