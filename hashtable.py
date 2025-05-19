@@ -8,12 +8,12 @@ class HashTable:
 
     def _hash(self, key: str) -> int:
         """
-        Return the hashed value using the rolling polynomial algorithm.
+        Return a hashed location using the rolling polynomial algorithm.
         Further reading: https://cp-algorithms.com/string/string-hashing.html
 
         Note: 
         - The largest value to be returned will be less than size.   
-        Remember to compress the return value to fit the table size (tip: You can use the mod operator once more)
+        Remember to compress the return value to fit the table size.
        
         Parameters
         ---------
