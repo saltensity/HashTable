@@ -11,8 +11,8 @@ with the attributes:
 - `values` - a Python list spanning the size of the hash table, pre-filled with the **None** placeholder
 
 and the following methods:  
-- `repr` - returns a formatted string containing the values in the hash table
-- `_hash`
+- `repr()` - returns a formatted string containing the values in the hash table
+- `_hash(key)`
     - takes in a `string` argument `key`
     - returns a hashed `integer` value denoting the `location` (to be used by the other methods for insertion/update/retrieval/deletion) using a hash function. A sample hash function, using the rolling polynomial algorithm is shown below:  
       (Further reading: https://cp-algorithms.com/string/string-hashing.html)  
@@ -61,30 +61,28 @@ and the following methods:
         RETURN hashValue MOD SIZE_OF_HASHTABLE
     END FUNCTION
     ```
-    `NOTE:` The largest value to be returned will be less than the size of hash table, hence the need to mod the hashValue with the size of the hash table. 
-- `add`
-    - adds an item to the hash table
+    `NOTE:` The largest location value to be returned should be less than the size of hash table, hence the need to mod the hashValue with the size of the hash table. 
+- `setitem(key, item)`
+    - adds/updates an item in the hash table
     - displays the following strings:
-        - `Unable to add. Destination not empty!` if there is already an item at the destination or
-        - `Data successfully added` otherwise
-- `get` - returns the following:
-    - an item within the hash table
-    - or the string `Destination is empty!` otherwise
-- `update`
-    - updates an item in the hash table
-    - displays the following strings:
-        - `Unable to update. Destination is empty!` if there is no item at the destination or
-        - `Data successfully updated` otherwise
-- `remove`
+        - `Data successfully added!` if the destination is empty or
+        - `Data successfully updated!` otherwise
+- `getitem(key)` - returns the following:
+    - returns an item within the hash table or
+    - displays the string `Destination is empty!` and returns the value `None` otherwise
+- `delitem(key)`
     - removes the item at the destination
     - displays the following strings:
         - `Unable to remove. Destination is empty!` if there is no item at the destination or
         - `Data successfully removed` otherwise
 
 ## Task 1.1
-Implement the `_hash` method such that:
+Implement the `_hash(key)` method such that:
 - it accepts a string `key` as parameter
 - uses the hashing algorithm mentioned above
 - and returns a integer value denoting the location of an item in the hash table
 
-**NOTE: Remember to include the docstrings for the above methods**
+## Task 1.2
+Implement the rest of the methods for the Hash Table.
+
+**NOTE: Remember to include the docstrings for your methods**

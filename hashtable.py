@@ -22,22 +22,17 @@ class HashTable:
         """
         pass
 
-    def add(self, key: str, value: dict) -> str:
+    def setitem(self, key: str, value: dict) -> None:
         """
         """
         pass
 
-    def get(self, key: str):
-        """
-        """
-        pass
-
-    def update(self, key: str, value: dict) -> str:
+    def getitem(self, key: str) -> 'dict | None':
         """
         """
         pass
         
-    def remove(self, key: str) -> str:
+    def delitem(self, key: str) -> None:
         """
         """
         pass
