@@ -19,7 +19,7 @@ and the following methods:
         
       $`hash(key) = (key[0] + key[1].p + key[2].p^2 + ... + key[n-1].p^{n-1})\ mod\ m = (\sum_{i=0}^{n-1} key[i].p^i)\ mod\ m`$  
       where
-      - `key[0]` indicates the integer representation of a character at index 0 of the string `key` (remember to convert it accordingly)
+      - `key` - each key segment is a string. It needs to be converted to its integer ASCII value 
       - `p` - a small prime number (if the input is composed of only lowercase letters of the English alphabet,  
         $p = 31$  is a good choice. If the input may contain both uppercase and lowercase letters, then  
         $p = 53$  is a possible choice.)
@@ -62,6 +62,7 @@ and the following methods:
     END FUNCTION
     ```
     `NOTE:` The largest location value to be returned should be less than the size of hash table, hence the need to mod the hashValue with the size of the hash table. 
+    
 - `setitem(key, item)`
     - adds/updates an item in the hash table
     - displays the following strings:
